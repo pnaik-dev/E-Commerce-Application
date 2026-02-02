@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { LogIn, Mail, Lock, ArrowRight, Loader } from "lucide-react";
+import { Eye, EyeOff,LogIn, Mail, Lock, ArrowRight, Loader } from "lucide-react";
 import { useUserStore } from "../stores/useUserStore";
 
 const LoginPage = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [showPassword, setShowPassword] = useState(false);
 
 	const { login, loading } = useUserStore();
 
@@ -53,7 +54,7 @@ const LoginPage = () => {
 									rounded-md shadow-sm
 									 placeholder-gray-400 focus:outline-none focus:ring-emerald-500 
 									 focus:border-emerald-500 sm:text-sm'
-									placeholder='you@gmail.com'
+									placeholder='john@gmail.com'
 								/>
 							</div>
 						</div>
@@ -68,7 +69,7 @@ const LoginPage = () => {
 								</div>
 								<input
 									id='password'
-									type='password'
+									type= {showPassword ? "text" : "password"}
 									required
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
@@ -76,6 +77,13 @@ const LoginPage = () => {
 									rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm'
 									placeholder='••••••••'
 								/>
+								<button
+									type='button'
+									onClick={() => setShowPassword(!showPassword)}
+									className='absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400'
+								>
+									{showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+								</button>
 							</div>
 						</div>
 
