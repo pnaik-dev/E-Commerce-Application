@@ -37,6 +37,10 @@ app.use("/api/coupons", couponRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
+// Test route
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 
 // Start the server
 app.listen(PORT, () => {
