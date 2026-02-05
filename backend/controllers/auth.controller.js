@@ -2,6 +2,9 @@ import { redis } from "../lib/redis.js";
 import User from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 
+// Check if environment is production
+const isProd = process.env.NODE_ENV === "production";
+
 // Generate access token and refresh token
 const generateTokens = (userId) => {
 	// Access token valid for 15 minutes
@@ -29,15 +32,15 @@ const setCookies = (res, accessToken, refreshToken) => {
 	// Set access token cookie
 	res.cookie("accessToken", accessToken, {
 		httpOnly: true, // prevent XSS attacks, cross site scripting attack
-		secure: process.env.NODE_ENV === "production", // only send cookie over HTTPS in production
-		sameSite: "strict", // prevents CSRF attack, cross-site request forgery attack
+		secure: isProd, // true on Vercel/Render, false locally
+		sameSite: isProd ? "none" : "lax", // prevents CSRF attack, cross-site request forgery attack
 		maxAge: 15 * 60 * 1000, // 15 minutes
 	});
 	// Set refresh token cookie
 	res.cookie("refreshToken", refreshToken, {
 		httpOnly: true, // prevent XSS attacks, cross site scripting attack
-		secure: process.env.NODE_ENV === "production", // only send cookie over HTTPS in production
-		sameSite: "strict", // prevents CSRF attack, cross-site request forgery attack
+		secure: isProd, // true on Vercel/Render, false locally
+		sameSite: isProd ? "none" : "lax", // prevents CSRF attack, cross-site request forgery attack
 		maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 	});
 };
@@ -157,8 +160,18 @@ export const logout = async (req, res) => {
 		}
 
 		// Clear cookies
-		res.clearCookie("accessToken");
-		res.clearCookie("refreshToken");
+		res.clearCookie("accessToken", {
+		httpOnly: true,
+		secure: isProd,
+		sameSite: isProd ? "none" : "lax",
+		});
+
+		res.clearCookie("refreshToken", {
+			httpOnly: true,
+			secure: isProd,
+			sameSite: isProd ? "none" : "lax",
+		});
+
 		res.json({ message: "Logged out successfully" });
 	} catch (error) {
 		console.log("Error in logout controller", error.message);
@@ -193,8 +206,8 @@ export const refreshToken = async (req, res) => {
 		// Set new access token cookie
 		res.cookie("accessToken", accessToken, {
 			httpOnly: true,
-			secure: process.env.NODE_ENV === "production",
-			sameSite: "strict",
+			secure: isProd,
+			sameSite: isProd ? "none" : "lax",
 			maxAge: 15 * 60 * 1000,
 		});
 
