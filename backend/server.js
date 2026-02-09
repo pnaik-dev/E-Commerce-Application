@@ -28,26 +28,11 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      // Allow health checks, Postman, server-to-server
-      if (!origin) return callback(null, true);
-
-      // Allow exact matches
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      // Allow ALL Vercel deployments (prod + preview)
-      if (origin.endsWith(".vercel.app")) {
-        return callback(null, true);
-      }
-
-      console.log("Blocked by CORS:", origin);
-      callback(new Error("Not allowed by CORS"));
-    },
+    origin: true,
     credentials: true,
   })
 );
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
