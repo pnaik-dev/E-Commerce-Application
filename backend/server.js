@@ -21,18 +21,12 @@ app.use(express.json({ limit: "10mb" })); // allows you to parse the body of the
 app.use(cookieParser());
 
 //CORS setup
-const allowedOrigins = [
-  "http://localhost:5175",
-  process.env.CLIENT_URL,
-].filter(Boolean);
-
 app.use(
   cors({
     origin: true,
     credentials: true,
   })
 );
-
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
