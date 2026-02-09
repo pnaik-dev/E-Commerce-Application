@@ -74,3 +74,7 @@ cd backend && npm install
 cd ../frontend && npm install
 npm run dev
 ```
+
+## Deployment
+- Frontend deployed on **Vercel**
+- Backend deployed on **Render**

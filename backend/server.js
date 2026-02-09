@@ -48,11 +48,11 @@ app.use("/api/analytics", analyticsRoutes);
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
+  res.send("Backend is running");
 });
 
 // Start the server
 app.listen(PORT, () => {
-	console.log("Server is running on http://localhost:" + PORT);
+	console.log("Server is running on PORT:" + PORT);
 	connectDB();
 });
