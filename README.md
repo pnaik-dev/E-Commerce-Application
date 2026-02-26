@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Application
 
-A full-stack e-commerce application built using the MERN stack, featuring secure authentication, role-based access control, product management, cart and checkout flow, Stripe payment integration, and an admin dashboard.
+A full-stack e-commerce application built using the MERN stack, featuring secure authentication, role-based access control, product management, cart functionality, checkout flow, Stripe payment integration, and an admin dashboard.
 
 This project demonstrates scalable backend architecture, secure payment processing, session management with Redis, and real-world production design patterns.
 
