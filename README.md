@@ -173,8 +173,6 @@ cd ../frontend
 npm run dev
 ```
 
----
-
 # 🌍 Deployment
 
 - Frontend deployed on Vercel
