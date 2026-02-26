@@ -4,6 +4,8 @@ A full-stack e-commerce application built using the MERN stack, featuring secure
 
 This project demonstrates scalable backend architecture, secure payment processing, session management with Redis, and real-world production design patterns.
 
+---
+
 # 🚀 Features
 
 ### 👤 Authentication & Authorization
@@ -33,6 +35,8 @@ This project demonstrates scalable backend architecture, secure payment processi
 - Clean, modern UI built with Tailwind CSS
 - Optimized state updates and API integration
 
+---
+
 # 🏗️ System Architecture
 
 ## Backend Architecture
@@ -53,6 +57,8 @@ This project demonstrates scalable backend architecture, secure payment processi
 - API integration using secure token-based requests
 - Responsive UI using Tailwind CSS
 - Structured state handling for cart and authentication
+
+---
 
 # 🔄 Application Flow
 
@@ -75,6 +81,8 @@ This project demonstrates scalable backend architecture, secure payment processi
 4. Order stored in database  
 5. Cart cleared after successful transaction  
 
+---
+
 # 🧠 Tech Stack
 
 ## Frontend
@@ -93,6 +101,8 @@ This project demonstrates scalable backend architecture, secure payment processi
 - Stripe API  
 - Cloudinary  
 
+---
+
 # 🔐 Security Features
 
 - Password hashing with bcrypt + salt  
@@ -104,6 +114,8 @@ This project demonstrates scalable backend architecture, secure payment processi
 - Secure Stripe payment handling  
 - Environment variable protection  
 - Centralized error handling  
+
+---
 
 # ⚙️ Environment Variables
 
@@ -139,6 +151,8 @@ Create a `.env` file inside the frontend directory:
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
+
+---
 
 # 🛠️ Installation & Setup
 
@@ -178,6 +192,8 @@ Start frontend:
 cd ../frontend
 npm run dev
 ```
+
+---
 
 # 🌍 Deployment
 
