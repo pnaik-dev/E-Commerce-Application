@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Application
 
-A production-ready full-stack E-Commerce platform built using the MERN stack, featuring secure authentication, role-based access control, product management, cart and checkout flow, Stripe payment integration, and an admin dashboard.
+A full-stack E-Commerce platform built using the MERN stack, featuring secure authentication, role-based access control, product management, cart and checkout flow, Stripe payment integration, and an admin dashboard.
 
 This project demonstrates scalable backend architecture, secure payment processing, session management with Redis, and real-world production design patterns.
 
@@ -134,6 +134,12 @@ STRIPE_SECRET_KEY=your_stripe_secret_key
 CLIENT_URL=http://localhost:5173
 ```
 
+Create a `.env` file inside the frontend directory:
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
 # 🛠️ Installation & Setup
 
 ## 1️⃣ Clone Repository
@@ -176,4 +182,4 @@ npm run dev
 # 🌍 Deployment
 
 - Frontend deployed on Vercel
-- Backend deployed on Vercel 
+- Backend deployed on Render 
