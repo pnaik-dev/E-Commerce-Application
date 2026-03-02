@@ -195,7 +195,7 @@ npm run dev
 
 # 📍 API Endpoints 
 
-## 🔐 Authentication
+## 🔐 Authentication Routes
 
 - **POST** `/api/auth/signup`  
   Register a new user account.
@@ -212,7 +212,7 @@ npm run dev
 - **GET** `/api/auth/profile` (Protected)  
   Retrieve the authenticated user’s profile information.
 
-## 🛍️ Products
+## 🛍️ Product Routes
 
 ### Public Routes
 - **GET** `/api/products/featured`  
@@ -237,7 +237,7 @@ npm run dev
 - **DELETE** `/api/products/:id`  
   Remove a product from the catalog.
 
-## 🛒 Cart (Authenticated Users Only)
+## 🛒 Cart Routes (Authenticated Users Only)
 
 - **GET** `/api/cart`  
   Retrieve the current user's cart items.
@@ -251,7 +251,7 @@ npm run dev
 - **DELETE** `/api/cart`  
   Remove all items from the user's cart.
 
-## 🎟️ Coupons (Authenticated Users Only)
+## 🎟️ Coupon Routes (Authenticated Users Only)
 
 - **GET** `/api/coupons`  
   Retrieve all available coupons for the user.
@@ -259,7 +259,7 @@ npm run dev
 - **POST** `/api/coupons/validate`  
   Validate a coupon code before checkout.
 
-## 💳 Payments (Authenticated Users Only)
+## 💳 Payment Routes (Authenticated Users Only)
 
 - **POST** `/api/payments/create-checkout-session`  
   Create a Stripe checkout session for payment.
@@ -267,7 +267,7 @@ npm run dev
 - **POST** `/api/payments/checkout-success`  
   Confirm successful payment and store order details.
 
-## 📊 Analytics
+## 📊 Analytics Routes
 
 ### Admin Protected Routes
 - **GET** `/api/analytics`  
