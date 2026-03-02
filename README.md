@@ -193,50 +193,87 @@ npm run dev
 
 ---
 
-# 📍 API Endpoints
+# 📍 API Endpoints 
 
 ## 🔐 Authentication
 
-- **POST** `/api/auth/signup`
-- **POST** `/api/auth/login`
-- **POST** `/api/auth/logout`
-- **POST** `/api/auth/refresh-token`
-- **GET** `/api/auth/profile` (Protected)
+- **POST** `/api/auth/signup`  
+  Register a new user account.
+
+- **POST** `/api/auth/login`  
+  Authenticate a user and return access/refresh tokens (JWT).
+
+- **POST** `/api/auth/logout`  
+  Log out the user and clear tokens/session.
+
+- **POST** `/api/auth/refresh-token`  
+  Refresh the access token using a valid refresh token.
+
+- **GET** `/api/auth/profile` (Protected)  
+  Retrieve the authenticated user’s profile information.
 
 ## 🛍️ Products
 
 ### Public Routes
-- **GET** `/api/products/featured`
-- **GET** `/api/products/category/:category`
-- **GET** `/api/products/recommendations`
+- **GET** `/api/products/featured`  
+  Fetch all products marked as featured.
+
+- **GET** `/api/products/category/:category`  
+  Fetch products filtered by a specific category.
+
+- **GET** `/api/products/recommendations`  
+  Fetch recommended products for users.
 
 ### Admin Protected Routes
-- **GET** `/api/products` 
+- **GET** `/api/products`   
+  Retrieve all products (admin access required).
+
 - **POST** `/api/products` 
-- **PATCH** `/api/products/:id` 
-- **DELETE** `/api/products/:id` 
+  Create a new product in the catalog.
+
+- **PATCH** `/api/products/:id`  
+  Toggle product features like “featured” status.
+
+- **DELETE** `/api/products/:id`  
+  Remove a product from the catalog.
 
 ## 🛒 Cart (Authenticated Users Only)
 
-- **GET** `/api/cart`
-- **POST** `/api/cart`
-- **PUT** `/api/cart/:id`
-- **DELETE** `/api/cart`
+- **GET** `/api/cart`  
+  Retrieve the current user's cart items.
+
+- **POST** `/api/cart`  
+  Add a product to the user's cart.
+
+- **PUT** `/api/cart/:id`  
+  Update the quantity of a specific cart item.
+
+- **DELETE** `/api/cart`  
+  Remove all items from the user's cart.
 
 ## 🎟️ Coupons (Authenticated Users Only)
 
-- **GET** `/api/coupons`
-- **POST** `/api/coupons/validate`
+- **GET** `/api/coupons`  
+  Retrieve all available coupons for the user.
+
+- **POST** `/api/coupons/validate`  
+  Validate a coupon code before checkout.
 
 ## 💳 Payments (Authenticated Users Only)
 
-- **POST** `/api/payments/create-checkout-session`
-- **POST** `/api/payments/checkout-success`
+- **POST** `/api/payments/create-checkout-session`  
+  Create a Stripe checkout session for payment.
+
+- **POST** `/api/payments/checkout-success`  
+  Confirm successful payment and store order details.
 
 ## 📊 Analytics
 
 ### Admin Protected Routes
-- **GET** `/api/analytics` 
+- **GET** `/api/analytics`  
+  Retrieve overall analytics data and daily sales reports.
+
+---
 
 # 🌍 Deployment
 
