@@ -211,10 +211,10 @@ npm run dev
 - **GET** `/api/products/recommendations`
 
 ### Admin Protected Routes
-- **GET** `/api/products` (Admin Only)
-- **POST** `/api/products` (Admin Only)
-- **PATCH** `/api/products/:id` (Admin Only)
-- **DELETE** `/api/products/:id` (Admin Only)
+- **GET** `/api/products` 
+- **POST** `/api/products` 
+- **PATCH** `/api/products/:id` 
+- **DELETE** `/api/products/:id` 
 
 ## 🛒 Cart (Authenticated Users Only)
 
@@ -236,7 +236,7 @@ npm run dev
 ## 📊 Analytics
 
 ### Admin Protected Routes
-- **GET** `/api/analytics` (Admin Only)
+- **GET** `/api/analytics` 
 
 # 🌍 Deployment
 
