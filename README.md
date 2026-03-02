@@ -21,7 +21,6 @@ This project demonstrates scalable backend architecture, secure payment processi
 - Quantity management
 - Secure checkout flow
 - Stripe-powered online payment integration
-- Order history tracking
 
 ### 🛠️ Admin Functionality
 - Admin dashboard
@@ -107,7 +106,6 @@ This project demonstrates scalable backend architecture, secure payment processi
 
 - Password hashing with bcrypt + salt  
 - Stateless JWT authentication  
-- Refresh token rotation  
 - Redis-backed session control  
 - Role-based access middleware  
 - Protected admin routes  
@@ -192,6 +190,63 @@ Start frontend:
 cd ../frontend
 npm run dev
 ```
+
+---
+
+# 📍 API Endpoints
+
+## 🔐 Authentication
+
+- **POST** `/api/auth/signup`
+- **POST** `/api/auth/login`
+- **POST** `/api/auth/logout`
+- **POST** `/api/auth/refresh-token`
+- **GET** `/api/auth/profile` (Protected)
+
+---
+
+## 🛍️ Products
+
+### Public Routes
+- **GET** `/api/products/featured`
+- **GET** `/api/products/category/:category`
+- **GET** `/api/products/recommendations`
+
+### Admin Protected Routes
+- **GET** `/api/products` (Admin Only)
+- **POST** `/api/products` (Admin Only)
+- **PATCH** `/api/products/:id` (Admin Only)
+- **DELETE** `/api/products/:id` (Admin Only)
+
+---
+
+## 🛒 Cart (Authenticated Users Only)
+
+- **GET** `/api/cart`
+- **POST** `/api/cart`
+- **PUT** `/api/cart/:id`
+- **DELETE** `/api/cart`
+
+---
+
+## 🎟️ Coupons (Authenticated Users Only)
+
+- **GET** `/api/coupons`
+- **POST** `/api/coupons/validate`
+
+---
+
+## 💳 Payments (Authenticated Users Only)
+
+- **POST** `/api/payments/create-checkout-session`
+- **POST** `/api/payments/checkout-success`
+
+---
+
+## 📊 Analytics
+
+### Admin Protected Routes
+- **GET** `/api/analytics` (Admin Only)
 
 ---
 
