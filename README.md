@@ -203,8 +203,6 @@ npm run dev
 - **POST** `/api/auth/refresh-token`
 - **GET** `/api/auth/profile` (Protected)
 
----
-
 ## 🛍️ Products
 
 ### Public Routes
@@ -218,8 +216,6 @@ npm run dev
 - **PATCH** `/api/products/:id` (Admin Only)
 - **DELETE** `/api/products/:id` (Admin Only)
 
----
-
 ## 🛒 Cart (Authenticated Users Only)
 
 - **GET** `/api/cart`
@@ -227,28 +223,20 @@ npm run dev
 - **PUT** `/api/cart/:id`
 - **DELETE** `/api/cart`
 
----
-
 ## 🎟️ Coupons (Authenticated Users Only)
 
 - **GET** `/api/coupons`
 - **POST** `/api/coupons/validate`
-
----
 
 ## 💳 Payments (Authenticated Users Only)
 
 - **POST** `/api/payments/create-checkout-session`
 - **POST** `/api/payments/checkout-success`
 
----
-
 ## 📊 Analytics
 
 ### Admin Protected Routes
 - **GET** `/api/analytics` (Admin Only)
-
----
 
 # 🌍 Deployment
 
