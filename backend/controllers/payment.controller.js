@@ -94,7 +94,7 @@ export const createCheckoutSession = async (req, res) => {
 		}
 		
 		// Return session ID and total amount to client
-		res.status(200).json({sessionId: session.id,url: session.url,totalAmount: totalAmount / 100});
+		res.status(200).json({ id: session.id, totalAmount: totalAmount / 100 });
 		
 	} catch (error) {
 		console.error("Error processing checkout:", error);
